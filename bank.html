@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marion Bank</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .photo-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .photo-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header class="text-center bg-gray-900 text-white py-4">
+    <h1 class="text-4xl font-bold">Marion Bank</h1>
+    <p class="text-gray-400">Welcome to the Bank that gives you Peace</p>
+  </header>
+
+  <div class="photo-container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <img src="bank.jpg" alt="Bank Photo" class="w-full h-auto rounded-md shadow-md">
+  </div>  
+
+  <main class="container mx-auto py-8">
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold">What would you like to do today?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        <div class="bg-white shadow-lg p-4 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Deposit</h3>
+          <p>Enter Account Number:</p>
+          <input id="depositAccountNumber" type="text" class="border border-gray-400 rounded px-4 py-2 mb-2">
+          <p>Enter Amount:</p>
+          <input id="depositAmount" type="text" class="border border-gray-400 rounded px-4 py-2 mb-4">
+          <button id="depositBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Deposit</button>
+        </div>
+      
+        <div class="bg-white shadow-lg p-4 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Transfer</h3>
+          <p>Enter Sender Account Number:</p>
+          <input id="senderAccountNumber" type="text" class="border border-gray-400 rounded px-4 py-2 mb-2">
+          <p>Enter Amount:</p>
+          <input id="transferAmount" type="text" class="border border-gray-400 rounded px-4 py-2 mb-2">
+          <p>Enter Receiver Account Number:</p>
+          <input id="receiverAccountNumber" type="text" class="border border-gray-400 rounded px-4 py-2 mb-4">
+          <button id="transferBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Transfer</button>
+        </div>
+      
+        <div class="bg-white shadow-lg p-4 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Withdraw</h3>
+          <p>Enter Account Number:</p>
+          <input id="withdrawAccountNumber" type="text" class="border border-gray-400 rounded px-4 py-2 mb-2">
+          <p>Enter Amount:</p>
+          <input id="withdrawAmount" type="text" class="border border-gray-400 rounded px-4 py-2 mb-4">
+          <button id="withdrawBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Withdraw</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <button id="viewDetailsBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">View Account Details</button>
+      <div id="accountDetailsCard" class="hidden mt-4 bg-white shadow-lg p-4 rounded-lg text-center">
+        <img src="https://th.bing.com/th/id/OIP.9cSqZVqE4U1nYDct2sUOhgHaGb?w=221&h=191&c=7&r=0&o=5&pid=1.7" alt="Virtual Card" class="mx-auto mb-4">
+        <h3 class="text-lg font-bold mb-2">Account Details</h3>
+        <p class="text-gray-600">Account Name: Agbani Braide</p>
+        <p class="text-gray-600">Account Number: 0231209894</p>
+        <p class="text-gray-600">Current Balance: $540000</p>
+      </div>
+    </section>
+
+    
+
+  </main>
+   
+  
+
+  <script>
+    const viewDetailsBtn = document.getElementById('viewDetailsBtn');
+    const accountDetailsCard = document.getElementById('accountDetailsCard');
+    
+    viewDetailsBtn.addEventListener('click', function() {
+      accountDetailsCard.classList.toggle('blur');
+      accountDetailsCard.classList.toggle('hidden');
+    });
+  </script>
+  <script src="bank.js"></script>
+</body>
+</html>
